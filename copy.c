@@ -16,8 +16,13 @@ int main(int argc, char **argv)
 	int fd1, fd2, len;
 	char buff[BUF_SIZE];
  
-	fd1 = open(argv[1], O_RDONLY);
+	fd1 = open(argv[1], O_RDONLY);		// OPEN FILE, FAIL-> return -1
+	if(fd1 ==-1)
+			printf("%s OPEN ERROR\n" ,argv[1]);
+
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC); 
+	if(fd2 == -1)
+			printf("%s OPEN ERROR\n", argv[2]);
 
 	while((len=read(fd1, buff, sizeof(buff))) >0)
 			write(fd2, buff, len);
