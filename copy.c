@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	if(fd1 ==-1)
 			printf("%s OPEN ERROR\n" ,argv[1]);
 
-	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC); 
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644); 
 	if(fd2 == -1)
 			printf("%s OPEN ERROR\n", argv[2]);
 
